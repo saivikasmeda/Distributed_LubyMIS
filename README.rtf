@@ -1,0 +1,73 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2578
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\fswiss\fcharset0 Helvetica-Bold;\f2\fnil\fcharset0 HelveticaNeue;
+\f3\fnil\fcharset0 Menlo-Regular;\f4\fnil\fcharset0 Menlo-Bold;}
+{\colortbl;\red255\green255\blue255;\red0\green0\blue0;\red255\green255\blue255;}
+{\*\expandedcolortbl;;\csgenericrgb\c0\c0\c0\c85000;\csgenericrgb\c100000\c100000\c100000;}
+\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs32 \cf0 This is group project
+\fs24 \
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f1\b \cf0 Group Members
+\f0\b0 \
+
+\f1\b\fs28 Saivikas Meda 
+\f0\b0          - SXM190011\
+
+\f1\b Sreekar Singareddy 
+\f0\b0 - SXS190008\
+
+\fs24 \
+\
+Download Distributed-Luby-MIS.zip folder and change the working directory to src folder using command 
+\f1\b "cd Distributed-Luby-MIS/Program/src"
+\f0\b0 .\
+\
+Java version - 1.7\
+Compile all java files run command 
+\f1\b Javac *.java 
+\f0\b0 \
+To execute run command 		   
+\f1\b java Main Distributed-Luby-MIS/Program/input.txt
+\f0\b0 \
+\
+\pard\tx593\pardeftab593\pardirnatural\partightenfactor0
+
+\f2\fs56 \cf2 \cb3 Distributed-Luby-MIS
+\f3\fs24 \
+
+\f2\fs28 This project implements LubyMIS algorithm on a distributed network. The distributed network is simulated by using multithreading concepts. Each thread would represent one system in the network. Messages are sent using IPC (Inter Process Communication) concepts.
+\f3\fs24 \
+\
+
+\f4\b Main.java
+\f3\b0 \
+This is the starting of the project. This Java class contains Main method where we create DSystem object and trigger configure method and execute round method.\
+
+\f4\b \
+DSystem.Java
+\f3\b0 \
+This is a global class where we read the data from the input file and create node objects and their neighbor connections. This class creates individual thread for each node and execute round. The final output is displayed from this class and validate the consistence of the solution.\
+\
+
+\f4\b Node.java\
+
+\f3\b0  In this class each node generate a message object setting it\'92s random value to data property and transport the message to all it\'92s neighbors. This class contains a receive method where messages are received that are sent by its neighbor nodes. This node object will wait till the receives all the message from its neighbors. In transition method we check for maxRandValue and set status of WINNER or LOSER. Disconnect from the rest of the connection pn status update.\
+\
+
+\f4\b Message.java\
+
+\f3\b0 This class is used to create the message objects that stores sender node , receiver node, data and type of the message.\
+\
+
+\f4\b Channel.java\
+
+\f3\b0 Channel class is used to transfer the message between sender to receiver nodes.\
+\
+
+\f4\b Printer.java\
+
+\f3\b0 This is a global printer class. This class contains methods that are used to print message for different scenarios ( debug, output, error). Every method has a boolean property, which is used to decide whether to display that particular category message or not.}
